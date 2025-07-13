@@ -121,14 +121,11 @@ def parse_articles(articles):
         # Extract price with fee
         price_with_fee_tag = article.find(
             "p",
-            class_="web_ui__Text__text",
+            class_="web_ui__Text__text web_ui__Text__caption web_ui__Text__left web_ui__Text__muted",
             attrs={"data-testid": lambda x: x and "price-text" in x},
         )
-        data["price"] = (
-            price_with_fee_tag.find_next("p").text
-            if price_with_fee_tag
-            else "Price with fee not found"
-        )
+
+        data["price"] = price_with_fee_tag.text if price_with_fee_tag else "Price with fee not found"
 
         # Url
         link = article.find("a", class_="new-item-box__overlay")
