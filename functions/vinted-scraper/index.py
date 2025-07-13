@@ -327,7 +327,7 @@ def generate_html(articles):
           </tr>
           <tr>
             <td align="center" style="padding-bottom: 5px; font-weight: bold;">
-              {item["brand"]} - Size {item["size"]}
+              {item["brand"]} - Size {item["size"]}, {item["price"]}
             </td>
           </tr>
           <tr>
